@@ -1,3 +1,10 @@
+@font-face {
+  font-family: 'Pretendard';
+  src: url('../../shared/assets/fonts/PretendardVariable.woff2') format('woff2');
+  font-weight: 100 900;
+  font-style: normal;
+}
+
 @import 'tailwindcss';
 
 @theme {
@@ -7,5 +14,9 @@
 @layer base {
   html {
     font-family: var(--font-sans);
+  }
+
+  button {
+    @apply cursor-pointer;
   }
 }

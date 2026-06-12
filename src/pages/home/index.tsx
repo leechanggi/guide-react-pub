@@ -3,7 +3,7 @@ import { Button } from '@/shared/ui';
 const PagesHome = () => {
   return (
     <div>
-      <Button></Button>
+      <Button>테스트</Button>
     </div>
   );
 };
