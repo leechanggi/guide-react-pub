@@ -26,6 +26,7 @@
   "devDependencies": {
     "@chromatic-com/storybook": "^5.2.1",
     "@eslint/js": "^10.0.1",
+    "@oxc-resolver/binding-win32-x64-msvc": "^11.20.0",
     "@storybook/addon-a11y": "^10.4.4",
     "@storybook/addon-docs": "^10.4.4",
     "@storybook/addon-mcp": "^0.6.0",
