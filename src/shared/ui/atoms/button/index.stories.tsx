@@ -3,8 +3,8 @@ import type { Meta, StoryObj } from '@storybook/react-vite';
 import { Button } from '.';
 
 // SVG를 인라인 TSX 컴포넌트로 import → currentColor 상속, 플러그인 불필요
-import PlusIcon from '../../../assets/images/icon/BtnPlusIcon';
-import ArrowDownIcon from '../../../assets/images/icon/BtnArrowDownIcon';
+import PlusIcon from '../../../assets/images/icon/IconPlus';
+import IconArrowDown from '../../../assets/images/icon/IconArrowDown';
 
 // ─── meta 설정 ───────────────────────────────────────────────────────────────
 
@@ -42,6 +42,10 @@ const meta = {
     // ReactNode 타입은 Controls 패널에서 편집 불가 → 비활성화
     leftIcon: { control: false },
     rightIcon: { control: false },
+    round: {
+      control: 'inline-radio',
+      options: ['rounded', 'square']
+    }
   },
 } satisfies Meta<typeof Button>;
 
@@ -149,7 +153,7 @@ export const WithLeftIcon: Story = {
 export const WithRightIcon: Story = {
   args: {
     children: 'Button',
-    rightIcon: <ArrowDownIcon />,
+    rightIcon: <IconArrowDown />,
   },
 };
 
@@ -160,7 +164,7 @@ export const WithBothIcons: Story = {
   args: {
     children: 'Button',
     leftIcon: <PlusIcon />,
-    rightIcon: <ArrowDownIcon />,
+    rightIcon: <IconArrowDown />,
   },
 };
 
@@ -204,13 +208,13 @@ export const AllVariantsWithIcons: Story = {
       <Button variant="primary" leftIcon={<PlusIcon />}>
         Primary
       </Button>
-      <Button variant="secondary" rightIcon={<ArrowDownIcon />}>
+      <Button variant="secondary" rightIcon={<IconArrowDown />}>
         Secondary
       </Button>
       <Button variant="colorLine" leftIcon={<PlusIcon />}>
         ColorLine
       </Button>
-      <Button variant="grayLine" rightIcon={<ArrowDownIcon />}>
+      <Button variant="grayLine" rightIcon={<IconArrowDown />}>
         GrayLine
       </Button>
     </div>
@@ -224,10 +228,24 @@ export const AllVariantsWithIcons: Story = {
 export const Disabled: Story = {
   render: () => (
     <div className="flex flex-wrap items-center gap-3">
-      <Button variant="primary" disabled leftIcon={<PlusIcon/>} rightIcon={<ArrowDownIcon />}>Primary</Button>
-      <Button variant="secondary" disabled leftIcon={<PlusIcon/>} rightIcon={<ArrowDownIcon />}>Secondary</Button>
-      <Button variant="colorLine" disabled leftIcon={<PlusIcon/>} rightIcon={<ArrowDownIcon />}>ColorLine</Button>
-      <Button variant="grayLine" disabled leftIcon={<PlusIcon/>} rightIcon={<ArrowDownIcon />}>GrayLine</Button>
+      <Button variant="primary" disabled leftIcon={<PlusIcon/>} rightIcon={<IconArrowDown />}>Primary</Button>
+      <Button variant="secondary" disabled leftIcon={<PlusIcon/>} rightIcon={<IconArrowDown />}>Secondary</Button>
+      <Button variant="colorLine" disabled leftIcon={<PlusIcon/>} rightIcon={<IconArrowDown />}>ColorLine</Button>
+      <Button variant="grayLine" disabled leftIcon={<PlusIcon/>} rightIcon={<IconArrowDown />}>GrayLine</Button>
     </div>
   ),
 };
+
+export const Square: Story = {
+  // args: {
+  //   children: 'Button',
+  //   leftIcon: <PlusIcon />,
+  //   round: 'rounded'
+  // }
+  render: () => (
+    <div className="flex flex-wrap items-center gap-3">
+      <Button variant="skyGrayLine" size="md" round="rounded">Button</Button>
+      <Button variant="colorLine" size="md" round="rounded">Button</Button>
+    </div>
+  )
+}

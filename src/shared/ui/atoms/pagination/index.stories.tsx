@@ -3,8 +3,8 @@ import type { Meta, StoryObj } from '@storybook/react-vite';
 import { Pagination } from '.';
 
 // SVG를 인라인 TSX 컴포넌트로 import → currentColor 상속, 플러그인 불필요
-import PlusIcon from '../../../assets/images/icon/BtnPlusIcon';
-import ArrowDownIcon from '../../../assets/images/icon/BtnArrowDownIcon';
+import PlusIcon from '../../../assets/images/icon/IconPlus';
+import IconArrowDown from '../../../assets/images/icon/IconArrowDown';
 
 // ─── meta 설정 ───────────────────────────────────────────────────────────────
 
@@ -149,7 +149,7 @@ export const WithLeftIcon: Story = {
 export const WithRightIcon: Story = {
   args: {
     children: 'Pagination',
-    rightIcon: <ArrowDownIcon />,
+    rightIcon: <IconArrowDown />,
   },
 };
 
@@ -160,7 +160,7 @@ export const WithBothIcons: Story = {
   args: {
     children: 'Pagination',
     leftIcon: <PlusIcon />,
-    rightIcon: <ArrowDownIcon />,
+    rightIcon: <IconArrowDown />,
   },
 };
 
@@ -204,13 +204,13 @@ export const AllVariantsWithIcons: Story = {
       <Pagination variant="primary" leftIcon={<PlusIcon />}>
         Primary
       </Pagination>
-      <Pagination variant="secondary" rightIcon={<ArrowDownIcon />}>
+      <Pagination variant="secondary" rightIcon={<IconArrowDown />}>
         Secondary
       </Pagination>
       <Pagination variant="colorLine" leftIcon={<PlusIcon />}>
         ColorLine
       </Pagination>
-      <Pagination variant="grayLine" rightIcon={<ArrowDownIcon />}>
+      <Pagination variant="grayLine" rightIcon={<IconArrowDown />}>
         GrayLine
       </Pagination>
     </div>
@@ -224,10 +224,10 @@ export const AllVariantsWithIcons: Story = {
 export const Disabled: Story = {
   render: () => (
     <div className="flex flex-wrap items-center gap-3">
-      <Pagination variant="primary" disabled leftIcon={<PlusIcon/>} rightIcon={<ArrowDownIcon />}>Primary</Pagination>
-      <Pagination variant="secondary" disabled leftIcon={<PlusIcon/>} rightIcon={<ArrowDownIcon />}>Secondary</Pagination>
-      <Pagination variant="colorLine" disabled leftIcon={<PlusIcon/>} rightIcon={<ArrowDownIcon />}>ColorLine</Pagination>
-      <Pagination variant="grayLine" disabled leftIcon={<PlusIcon/>} rightIcon={<ArrowDownIcon />}>GrayLine</Pagination>
+      <Pagination variant="primary" disabled leftIcon={<PlusIcon/>} rightIcon={<IconArrowDown />}>Primary</Pagination>
+      <Pagination variant="secondary" disabled leftIcon={<PlusIcon/>} rightIcon={<IconArrowDown />}>Secondary</Pagination>
+      <Pagination variant="colorLine" disabled leftIcon={<PlusIcon/>} rightIcon={<IconArrowDown />}>ColorLine</Pagination>
+      <Pagination variant="grayLine" disabled leftIcon={<PlusIcon/>} rightIcon={<IconArrowDown />}>GrayLine</Pagination>
     </div>
   ),
 };

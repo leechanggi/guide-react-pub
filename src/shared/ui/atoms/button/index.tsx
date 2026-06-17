@@ -11,21 +11,29 @@ const buttonVariants = cva(
       // variant — 버튼의 색상 테마
       variant: {
         primary:
-          'bg-[#1A94FF] text-white hover:bg-[#0582F0]',
+          'border bg-[#1A94FF] text-white hover:bg-[#0582F0]',
         secondary:
-          'bg-[#36394F] text-[#fff] hover:bg-[#091242]',
+          'border bg-[#36394F] text-[#fff] hover:bg-[#091242]',
         colorLine:
           'border border-[#1A94FF] text-[#0582F0] bg-transparent hover:bg-[#1A94FF]/10 hover:border-[#0582F0]',
         grayLine:
-          'border border-[#DFDFDF] text-[#333] bg-white hover:border-[#333]'
+          'border border-[#DFDFDF] text-[#333] hover:border-[#333]',
+        skyGrayLine: 'border border-[#BEC1D3] text-[#BEC1D3] hover:border-[#333]',
+        transparent: ''
       },
 
       // size — 버튼의 높이·패딩·텍스트·모서리
       size: {
-        xl: 'px-4 py-[13px] text-base leading-[22px] rounded-lg',
-        lg: 'px-3 py-2.5 text-[15px] leading-[20px] rounded-md',
-        md: 'px-3 py-2 text-sm rounded-md',
-        sm: 'px-2.5 py-[9px] text-[13px] leading-[14px] rounded',
+        xl: 'px-4 py-[13px] text-base leading-[20px] rounded-lg',
+        lg: 'px-3 py-2.5 text-[15px] leading-[18px] rounded-md',
+        md: 'px-3 py-2 text-sm leading-[18px] rounded-md',
+        sm: 'px-2.5 py-[9px] text-[13px] leading-[12px] rounded',
+      },
+
+      // round — 모서리 모양 (size의 rounded-* 를 덮어씀)
+      round: {
+        rounded: 'rounded-full',
+        square:  '',
       },
     },
     //  컴포넌트에 props를 따로 안 넘겼을 때 기본으로 적용할 값
@@ -70,6 +78,7 @@ export const Button = ({
   size,
   type = 'button',
   variant,
+  round,
   leftIcon,
   rightIcon,
   children,
@@ -78,7 +87,7 @@ export const Button = ({
   return (
     <button
       type={type}
-      className={cn(buttonVariants({ size, variant }), className)}
+      className={cn(buttonVariants({ size, variant, round }), className)}
       {...props}
     >
       {/* 왼쪽 아이콘: shrink-0으로 아이콘이 찌그러지지 않도록 고정 */}

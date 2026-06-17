@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from 'react-router';
+import { Routes, Route } from 'react-router';
 import PagesHome from '@/pages/home';
 import PagesCategoryEngineering from '@/pages/category/engineering';
 import PagesCategoryDesign from '@/pages/category/design';
@@ -7,8 +7,7 @@ import PagesNotFound from '@/pages/notfound';
 
 const RouteComponent = () => {
   return (
-    <BrowserRouter>
-      <Routes>
+    <Routes>
         <Route path='/' element={<PagesHome />} />
 
         <Route path='category'>
@@ -19,8 +18,7 @@ const RouteComponent = () => {
         <Route path='article/:articleId' element={<PagesArticle />} />
 
         <Route path='*' element={<PagesNotFound />} />
-      </Routes>
-    </BrowserRouter>
+    </Routes>
   );
 };
 
