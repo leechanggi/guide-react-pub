@@ -5,7 +5,7 @@ import PagesCategoryDesign from '@/pages/category/design';
 import PagesArticle from '@pages/article';
 import PagesNotFound from '@/pages/notfound';
 
-const RouteComponent = () => {
+const RouteComponent = ({ menuItems }) => {
   return (
     <Routes>
         <Route path='/' element={<PagesHome />} />

@@ -1,10 +1,9 @@
-import { Button } from '@/shared/ui';
-
 const PagesHome = () => {
+  
   return (
-    <div>
-      <Button>테스트</Button>
-    </div>
+    <main className="flex h-full">
+      HOME
+    </main>
   );
 };
 

@@ -15,7 +15,7 @@ const Header = () => {
       {
         admin
         ? (
-          <header className="flex justify-between items-center h-17.5 px-7.5 bg-[#1C2536]">
+          <header className="z-100 absolute flex justify-between w-full items-center h-17.5 px-7.5 bg-[#1C2536]">
             <Link to="/">
               <LogoBonce/>
             </Link>
@@ -34,7 +34,7 @@ const Header = () => {
             </nav>
           </header>
         ) : (
-          <header className="flex justify-between items-center h-17.5 px-7.5 bg-[#F1F4F9]">
+          <header className="z-100 absolute flex justify-between w-full items-center h-17.5 px-7.5 bg-[#F1F4F9]">
             <Link to="/">
               <LogoBLifeCare/>
             </Link>
