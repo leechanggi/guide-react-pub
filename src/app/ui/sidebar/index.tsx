@@ -49,9 +49,9 @@ const SideBar = ({ menuItems }) => {
       <nav className="flex flex-col gap-y-2">
         {menuItems.map( item => {
           const isMenuOpen = openMenuId === item.id;
-          const isActive = item.to
-            ? location.pathname === item.to
-            : (item.children?.some(c => c.to === location.pathname) ?? false);
+          const isActive = item.path
+            ? location.pathname === item.path
+            : (item.children?.some(c => c.path === location.pathname) ?? false);
 
           return (
             <div key={item.id}>
@@ -81,8 +81,8 @@ const SideBar = ({ menuItems }) => {
                 </button>
               ) : (
                 // 2Depth가 없는 것 (아코디언 버튼 x)
-                <Link 
-                  to={item.to ?? '/'}
+                <Link
+                  to={item.path ?? '/'}
                   className={cn(
                     "flex justify-center items-center w-full h-13.5 transition-color",
                     isActive
@@ -106,12 +106,12 @@ const SideBar = ({ menuItems }) => {
                   isMenuOpen ? "max-h-60" : "max-h-0")}
                 >
                   {item.children.map(child => {
-                    const isChildActive = location.pathname === child.to;
+                    const isChildActive = location.pathname === child.path;
 
                     return (
                       <Link
                         key={child.id}
-                        to={child.to}
+                        to={child.path ?? '/'}
                         className={cn(
                           "flex items-center pl-[48px] pr-5 py-2.5 rounded-lg text-sm transition-colors",
                           isChildActive 

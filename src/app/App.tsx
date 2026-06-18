@@ -8,6 +8,8 @@ import IconMonitor from '@/shared/assets/images/icon/IconMonitor';
 import IconFileCheck from '@/shared/assets/images/icon/IconFileCheck';
 import IconMessage from '@/shared/assets/images/icon/IconMessage';
 import IconSetting from '@/shared/assets/images/icon/IconSetting';
+import PagesHome from '@/pages/home';
+import PagePlaceholder from '@/pages/placeholder';
 
 import './styles/global.css';
 import SideBar from './ui/sidebar';
@@ -17,18 +19,19 @@ const menuItems = [
     id: 'home',
     label: '메인',
     icon: <IconHome />,
-    to: '/',
+    path: '/',
+    element: <PagesHome />,
   },
   {
     id: 'service',
     label: '서비스 관리',
     icon: <IconService />,
     children: [
-      { id: 'member', label: '회원관리', to: '/service/member' },
-      { id: 'devices', label: '데이터 수집장치 현황', to: '/service/devices' },
-      { id: 'service', label: '서비스 이용 현황', to: '/service/service' },
-      { id: 'partners', label: '제휴사 차량 관리', to: '/service/partners' },
-      { id: 'model', label: '지원차종 관리', to: '/service/model' },
+      { id: 'member', label: '회원관리', path: '/service/member', element: <PagePlaceholder label="회원관리" /> },
+      { id: 'devices', label: '데이터 수집장치 현황', path: '/service/devices', element: <PagePlaceholder label="데이터 수집장치 현황" /> },
+      { id: 'service-usage', label: '서비스 이용 현황', path: '/service/service', element: <PagePlaceholder label="서비스 이용 현황" /> },
+      { id: 'partners', label: '제휴사 차량 관리', path: '/service/partners', element: <PagePlaceholder label="제휴사 차량 관리" /> },
+      { id: 'model', label: '지원차종 관리', path: '/service/model', element: <PagePlaceholder label="지원차종 관리" /> },
     ],
   },
   {
@@ -36,8 +39,8 @@ const menuItems = [
     label: '전시 관리',
     icon: <IconMonitor />,
     children: [
-      { id: 'one', label: '1 Depth', to: '/display/one' },
-      { id: 'two', label: '2 Depth', to: '/display/two' },
+      { id: 'display-one', label: '1 Depth', path: '/display/one', element: <PagePlaceholder label="전시 관리 1 Depth" /> },
+      { id: 'display-two', label: '2 Depth', path: '/display/two', element: <PagePlaceholder label="전시 관리 2 Depth" /> },
     ],
   },
   {
@@ -45,8 +48,8 @@ const menuItems = [
     label: '게시판 관리',
     icon: <IconFileCheck />,
     children: [
-      { id: 'one', label: '1 Depth', to: '/board/one' },
-      { id: 'two', label: '2 Depth', to: '/board/two' },
+      { id: 'board-one', label: '1 Depth', path: '/board/one', element: <PagePlaceholder label="게시판 관리 1 Depth" /> },
+      { id: 'board-two', label: '2 Depth', path: '/board/two', element: <PagePlaceholder label="게시판 관리 2 Depth" /> },
     ],
   },
   {
@@ -54,8 +57,8 @@ const menuItems = [
     label: '메시지 관리',
     icon: <IconMessage />,
     children: [
-      { id: 'one', label: '1 Depth', to: '/message/one' },
-      { id: 'two', label: '2 Depth', to: '/message/two' },
+      { id: 'message-one', label: '1 Depth', path: '/message/one', element: <PagePlaceholder label="메시지 관리 1 Depth" /> },
+      { id: 'message-two', label: '2 Depth', path: '/message/two', element: <PagePlaceholder label="메시지 관리 2 Depth" /> },
     ],
   },
   {
@@ -63,12 +66,11 @@ const menuItems = [
     label: '공통 관리',
     icon: <IconSetting />,
     children: [
-      { id: 'one', label: '1 Depth', to: '/common/one' },
-      { id: 'two', label: '2 Depth', to: '/common/two' },
+      { id: 'common-one', label: '1 Depth', path: '/common/one', element: <PagePlaceholder label="공통 관리 1 Depth" /> },
+      { id: 'common-two', label: '2 Depth', path: '/common/two', element: <PagePlaceholder label="공통 관리 2 Depth" /> },
     ],
   },
 ];
-
 
 const App = () => {
   return (
@@ -76,7 +78,7 @@ const App = () => {
       <Header />
       <div>
         <div className="container">
-          <SideBar menuItems={menuItems}/>
+          <SideBar menuItems={menuItems} />
           <RouteComponent menuItems={menuItems} />
         </div>
       </div>
