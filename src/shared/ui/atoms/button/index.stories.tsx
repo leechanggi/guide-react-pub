@@ -18,8 +18,6 @@ import IconArrowDown from '../../../assets/images/icon/IconArrowDown';
  * argTypes     Controls 패널의 각 Prop UI 위젯 설정
  *   variant    inline-radio → 4개 색상 테마를 라디오 버튼으로 전환
  *   size       inline-radio → 4개 크기를 라디오 버튼으로 전환
- *   leftIcon / rightIcon
- *              ReactNode는 Storybook Controls로 제어 불가 → 비활성화
  */
 const meta = {
   title: 'shared/ui/atoms/Button',
@@ -39,9 +37,6 @@ const meta = {
       control: 'inline-radio',
       options: ['xl', 'lg', 'md', 'sm'],
     },
-    // ReactNode 타입은 Controls 패널에서 편집 불가 → 비활성화
-    leftIcon: { control: false },
-    rightIcon: { control: false },
     round: {
       control: 'inline-radio',
       options: ['rounded', 'square']
@@ -136,36 +131,19 @@ export const Small: Story = {
 
 // ─── 아이콘 스토리 ───────────────────────────────────────────────────────────
 
-/**
- * WithLeftIcon — 텍스트 왼쪽에 아이콘 배치
- * leftIcon prop에 ReactNode를 전달하면 자동으로 아이콘이 표시됨
- */
+/** WithLeftIcon — 텍스트 왼쪽에 아이콘 배치 */
 export const WithLeftIcon: Story = {
-  args: {
-    children: 'Button',
-    leftIcon: <PlusIcon />,
-  },
+  render: () => <Button><PlusIcon /> Button</Button>,
 };
 
-/**
- * WithRightIcon — 텍스트 오른쪽에 아이콘 배치
- */
+/** WithRightIcon — 텍스트 오른쪽에 아이콘 배치 */
 export const WithRightIcon: Story = {
-  args: {
-    children: 'Button',
-    rightIcon: <IconArrowDown />,
-  },
+  render: () => <Button>Button <IconArrowDown /></Button>,
 };
 
-/**
- * WithBothIcons — 텍스트 양쪽에 아이콘 배치
- */
+/** WithBothIcons — 텍스트 양쪽에 아이콘 배치 */
 export const WithBothIcons: Story = {
-  args: {
-    children: 'Button',
-    leftIcon: <PlusIcon />,
-    rightIcon: <IconArrowDown />,
-  },
+  render: () => <Button><PlusIcon /> Button <IconArrowDown /></Button>,
 };
 
 // ─── 전체 조합 쇼케이스 ──────────────────────────────────────────────────────
@@ -205,18 +183,10 @@ export const AllSizes: Story = {
 export const AllVariantsWithIcons: Story = {
   render: () => (
     <div className="flex flex-wrap items-center gap-3">
-      <Button variant="primary" leftIcon={<PlusIcon />}>
-        Primary
-      </Button>
-      <Button variant="secondary" rightIcon={<IconArrowDown />}>
-        Secondary
-      </Button>
-      <Button variant="colorLine" leftIcon={<PlusIcon />}>
-        ColorLine
-      </Button>
-      <Button variant="grayLine" rightIcon={<IconArrowDown />}>
-        GrayLine
-      </Button>
+      <Button variant="primary"><PlusIcon /> Primary</Button>
+      <Button variant="secondary">Secondary <IconArrowDown /></Button>
+      <Button variant="colorLine"><PlusIcon /> ColorLine</Button>
+      <Button variant="grayLine">GrayLine <IconArrowDown /></Button>
     </div>
   ),
 };
@@ -228,10 +198,10 @@ export const AllVariantsWithIcons: Story = {
 export const Disabled: Story = {
   render: () => (
     <div className="flex flex-wrap items-center gap-3">
-      <Button variant="primary" disabled leftIcon={<PlusIcon/>} rightIcon={<IconArrowDown />}>Primary</Button>
-      <Button variant="secondary" disabled leftIcon={<PlusIcon/>} rightIcon={<IconArrowDown />}>Secondary</Button>
-      <Button variant="colorLine" disabled leftIcon={<PlusIcon/>} rightIcon={<IconArrowDown />}>ColorLine</Button>
-      <Button variant="grayLine" disabled leftIcon={<PlusIcon/>} rightIcon={<IconArrowDown />}>GrayLine</Button>
+      <Button variant="primary" disabled><PlusIcon /> Primary <IconArrowDown /></Button>
+      <Button variant="secondary" disabled><PlusIcon /> Secondary <IconArrowDown /></Button>
+      <Button variant="colorLine" disabled><PlusIcon /> ColorLine <IconArrowDown /></Button>
+      <Button variant="grayLine" disabled><PlusIcon /> GrayLine <IconArrowDown /></Button>
     </div>
   ),
 };

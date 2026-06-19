@@ -38,7 +38,7 @@ const Header = () => {
             <Link to="/">
               <LogoBLifeCare/>
             </Link>
-            <Button variant="transparent" leftIcon={<IconPerson/>} rightIcon={<IconArrowDown />}>{"김엔솔"} 님</Button>
+            <Button variant="transparent"><IconPerson />{"김엔솔"} 님<IconArrowDown /></Button>
           </header>
         )
       }

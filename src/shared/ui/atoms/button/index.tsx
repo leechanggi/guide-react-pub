@@ -1,4 +1,4 @@
-import type { ButtonHTMLAttributes, ReactNode } from 'react';
+import type { ButtonHTMLAttributes } from 'react';
 import { cva, type VariantProps } from 'class-variance-authority';
 
 import cn from '@shared/lib/cn';
@@ -44,43 +44,15 @@ const buttonVariants = cva(
   }
 );
 
-/**
- * ButtonProps 타입
- *
- * ButtonHTMLAttributes<HTMLButtonElement>
- *   → onClick, disabled, type, aria-label 등 표준 button 속성
- * VariantProps<typeof buttonVariants>
- *   → variant: 'primary' | 'secondary' | 'colorLine' | 'grayLine'  (선택적)
- *   → size: 'xl' | 'lg' | 'md' | 'sm'                              (선택적)
- * leftIcon / rightIcon
- *   → 텍스트 왼쪽/오른쪽에 렌더링할 아이콘 노드
- */
 export type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> &
-  VariantProps<typeof buttonVariants> & {
-    leftIcon?: ReactNode;
-    rightIcon?: ReactNode;
-  };
+  VariantProps<typeof buttonVariants>;
 
-/**
- * Button 컴포넌트
- *
- * @param className  외부 추가 클래스 (cn()이 충돌을 자동 해결)
- * @param size       버튼 크기 ('xl' | 'lg' | 'md' | 'sm'), 기본값 'md'
- * @param type       button 타입, 기본값 'button' (form 내 실수 제출 방지)
- * @param variant    색상 테마, 기본값 'primary'
- * @param leftIcon   텍스트 왼쪽 아이콘 ReactNode
- * @param rightIcon  텍스트 오른쪽 아이콘 ReactNode
- * @param children   버튼 텍스트
- * @param ...props   나머지 네이티브 button 속성
- */
 export const Button = ({
   className,
   size,
   type = 'button',
   variant,
   round,
-  leftIcon,
-  rightIcon,
   children,
   ...props
 }: ButtonProps) => {
@@ -90,15 +62,7 @@ export const Button = ({
       className={cn(buttonVariants({ size, variant, round }), className)}
       {...props}
     >
-      {/* 왼쪽 아이콘: shrink-0으로 아이콘이 찌그러지지 않도록 고정 */}
-      {leftIcon && (
-        <span className="inline-flex shrink-0">{leftIcon}</span>
-      )}
       {children}
-      {/* 오른쪽 아이콘 */}
-      {rightIcon && (
-        <span className="inline-flex shrink-0">{rightIcon}</span>
-      )}
     </button>
   );
 };
