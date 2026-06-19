@@ -1,9 +1,4 @@
-import IconHome from '@/shared/assets/images/icon/IconHome';
-import IconService from '@/shared/assets/images/icon/IconService';
-import IconMonitor from '@/shared/assets/images/icon/IconMonitor';
-import IconFileCheck from '@/shared/assets/images/icon/IconFileCheck';
-import IconMessage from '@/shared/assets/images/icon/IconMessage';
-import IconSetting from '@/shared/assets/images/icon/IconSetting';
+import { IconHome, IconService, IconMonitor, IconFileCheck, IconMessage, IconSetting } from '@/shared/assets/images/icon';
 import PagesHome from '@/pages/home';
 import PagePlaceholder from '@/pages/placeholder';
 
