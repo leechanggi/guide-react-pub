@@ -1,0 +1,10 @@
+export { default as IconArrowDown } from "./IconArrowDown";
+export { default as IconArrowRight } from "./IconArrowRight";
+export { default as IconFileCheck } from "./IconFileCheck";
+export { default as IconHome } from "./IconHome";
+export { default as IconMessage } from "./IconMessage";
+export { default as IconMonitor } from "./IconMonitor";
+export { default as IconPerson } from "./IconPerson";
+export { default as IconPlus } from "./IconPlus";
+export { default as IconService } from "./IconService";
+export { default as IconSetting } from "./IconSetting";

@@ -1,13 +1,20 @@
-const BtnPlusIcon = () => (
-  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+import * as React from "react";
+import type { SVGProps } from "react";
+const SvgIconPlus = (props: SVGProps<SVGSVGElement>) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width={20}
+    height={20}
+    fill="none"
+    {...props}
+  >
     <path
-      d="M10.0013 4.16699V15.8337M4.16797 10.0003H15.8346"
       stroke="currentColor"
-      strokeWidth="1.5"
       strokeLinecap="round"
       strokeLinejoin="round"
+      strokeWidth={1.5}
+      d="M10.001 4.167v11.667M4.168 10h11.667"
     />
   </svg>
 );
-
-export default BtnPlusIcon;
+export default SvgIconPlus;

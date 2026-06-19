@@ -1,13 +1,20 @@
-const IconArrowDown = () => (
-  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+import * as React from "react";
+import type { SVGProps } from "react";
+const SvgIconArrowDown = (props: SVGProps<SVGSVGElement>) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width={20}
+    height={20}
+    fill="none"
+    {...props}
+  >
     <path
-      d="M5 7.91699L10 12.917L15 7.91699"
       stroke="currentColor"
-      strokeWidth="1.5"
       strokeLinecap="round"
       strokeLinejoin="round"
+      strokeWidth={1.5}
+      d="m5 7.917 5 5 5-5"
     />
   </svg>
 );
-
-export default IconArrowDown;
+export default SvgIconArrowDown;

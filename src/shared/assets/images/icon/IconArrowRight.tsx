@@ -1,12 +1,33 @@
-const IconArrowRight = () => (
-  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <mask id="mask0_13218_61952" style={{ maskType: 'alpha' }} maskUnits="userSpaceOnUse" x="7" y="4" width="7" height="12">
-      <path d="M7.91602 15L12.916 10L7.91602 5" stroke="black" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+import * as React from "react";
+import type { SVGProps } from "react";
+const SvgIconArrowRight = (props: SVGProps<SVGSVGElement>) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width={20}
+    height={20}
+    fill="none"
+    {...props}
+  >
+    <mask
+      id="IconArrowRight_svg__a"
+      width={7}
+      height={12}
+      x={7}
+      y={4}
+      mask-type="alpha"
+      maskUnits="userSpaceOnUse"
+    >
+      <path
+        stroke="#000"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth={1.5}
+        d="m7.916 15 5-5-5-5"
+      />
     </mask>
-    <g mask="url(#mask0_13218_61952)">
-      <rect x="20" width="20" height="20" transform="rotate(90 20 0)" fill="black"/>
+    <g mask="url(#IconArrowRight_svg__a)">
+      <path fill="#000" d="M20 0v20H0V0z" />
     </g>
   </svg>
 );
-
-export default IconArrowRight;
+export default SvgIconArrowRight;

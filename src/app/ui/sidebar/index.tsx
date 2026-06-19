@@ -1,8 +1,7 @@
 import { Link, useLocation } from "react-router";
 import cn from '@shared/lib/cn';
 import { useState } from "react";
-import IconArrowDown from "@/shared/assets/images/icon/IconArrowDown";
-import IconArrowRight from "@/shared/assets/images/icon/IconArrowRight";
+import { IconArrowDown, IconArrowRight } from "@/shared/assets/images/icon";
 
 const SideBar = ({ menuItems }) => {
   const [isExpanded, setIsExpanded] = useState(false);

@@ -1,10 +1,7 @@
 import { Button } from "@/shared/ui";
 import { Link } from "react-router";
-import LogoBonce from '../../../shared/assets/images/logo/LogoBonce';
-import LogoBLifeCare from '../../../shared/assets/images/logo/LogoBLifeCare';
-import LogoLg from '../../../shared/assets/images/logo/LogoLg';
-import IconPerson from '../../../shared/assets/images/icon/IconPerson';
-import IconArrowDown from '../../../shared/assets/images/icon/IconArrowDown';
+import { LogoBonce, LogoBLifeCare, LogoLg } from "@/shared/assets/images/logo";
+import { IconPerson, IconArrowDown } from "@/shared/assets/images/icon";
 import { useAuth } from '@app/context/AuthContext';
 
 const Header = () => {
