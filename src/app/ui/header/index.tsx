@@ -5,10 +5,10 @@ import LogoBLifeCare from '../../../shared/assets/images/logo/LogoBLifeCare';
 import LogoLg from '../../../shared/assets/images/logo/LogoLg';
 import IconPerson from '../../../shared/assets/images/icon/IconPerson';
 import IconArrowDown from '../../../shared/assets/images/icon/IconArrowDown';
+import { useAuth } from '@app/context/AuthContext';
 
 const Header = () => {
-  const admin = false;
-  const login = false;
+  const { admin, login } = useAuth();
 
   return (
     <>

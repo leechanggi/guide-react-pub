@@ -3,11 +3,13 @@ import Header from '@/app/ui/header';
 import Footer from '@/app/ui/footer';
 import SideBar from './ui/sidebar';
 import menuItems from './menuItems';
+import { AuthProvider } from './context/AuthContext';
 
 import './styles/global.css';
 
 const App = () => {
   return (
+    <AuthProvider>
     <BrowserRouter>
       <Header />
       <div>
@@ -26,6 +28,7 @@ const App = () => {
       </div>
       <Footer />
     </BrowserRouter>
+    </AuthProvider>
   );
 };
 
