@@ -85,12 +85,10 @@ const Navi = ({ menuItems }) => {
                   to={item.path ?? '/'}
                   className={cn(
                     "flex justify-center items-center w-full h-13.5 transition-color",
+                    isExpanded && "justify-start px-3.5 gap-x-3",
                     isActive
                       ? "bg-white rounded-lg"
-                      : "",
-                    isExpanded
-                      ? "bg-[#F1F4F9] justify-start px-3.5 gap-x-3"
-                      : "",
+                      : isExpanded ? "bg-[#F1F4F9]" : "",
                   )}
                 >
                   <span>{item.icon}</span>
