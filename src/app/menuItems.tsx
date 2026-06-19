@@ -1,6 +1,7 @@
 import { IconHome, IconService, IconMonitor, IconFileCheck, IconMessage, IconSetting } from '@/shared/assets/images/icon';
 import PagesHome from '@/pages/home';
 import PagePlaceholder from '@/pages/placeholder';
+import Board from '@/pages/board';
 
 export type MenuItem = {
   id: string;
@@ -45,7 +46,7 @@ const menuItems: MenuItem[] = [
     label: '게시판 관리',
     icon: <IconFileCheck />,
     children: [
-      { id: 'board-one', label: '1 Depth', path: '/board/one', element: <PagePlaceholder label="게시판 관리 1 Depth" /> },
+      { id: 'board-one', label: '공지사항', path: '/board/one', element: <Board/> },
       { id: 'board-two', label: '2 Depth', path: '/board/two', element: <PagePlaceholder label="게시판 관리 2 Depth" /> },
     ],
   },

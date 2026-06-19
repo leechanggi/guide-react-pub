@@ -3,7 +3,7 @@ import cn from '@shared/lib/cn';
 import { useState } from "react";
 import { IconArrowDown, IconArrowRight } from "@/shared/assets/images/icon";
 
-const SideBar = ({ menuItems }) => {
+const Navi = ({ menuItems }) => {
   const [isExpanded, setIsExpanded] = useState(false);
   const [openMenuId, setOpenMenuId] = useState<string | null>(null);
   const location = useLocation();
@@ -133,4 +133,4 @@ const SideBar = ({ menuItems }) => {
   );
 }
 
-export default SideBar;
+export default Navi;
