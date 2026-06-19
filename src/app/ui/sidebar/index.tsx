@@ -62,7 +62,8 @@ const SideBar = ({ menuItems }) => {
                   onClick={() => handleMenuClick(item.id)}
                   className={cn(
                     "flex justify-center items-center w-full h-13.5 transition-colors",
-                    isExpanded? 'gap-3 px-3.5' : 'justify-center'
+                    isExpanded ? 'gap-3 px-3.5' : 'justify-center',
+                    isActive && "bg-white rounded-lg",
                   )}
                 >
                   <span className="shrink-0">{item.icon}</span>

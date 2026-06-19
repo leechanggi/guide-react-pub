@@ -1,7 +1,6 @@
-import { BrowserRouter } from 'react-router';
+import { BrowserRouter, Routes, Route } from 'react-router';
 import Header from '@/app/ui/header';
 import Footer from '@/app/ui/footer';
-import RouteComponent from '@app/routes';
 import IconHome from '@/shared/assets/images/icon/IconHome';
 import IconService from '@/shared/assets/images/icon/IconService';
 import IconMonitor from '@/shared/assets/images/icon/IconMonitor';
@@ -79,7 +78,15 @@ const App = () => {
       <div>
         <div className="container">
           <SideBar menuItems={menuItems} />
-          <RouteComponent menuItems={menuItems} />
+          <Routes>
+            {menuItems.flatMap(item =>
+              item.children
+                ? item.children.map(child => (
+                    <Route key={child.id} path={child.path} element={child.element} />
+                  ))
+                : [<Route key={item.id} path={item.path} element={item.element} />]
+            )}
+          </Routes>
         </div>
       </div>
       <Footer />
