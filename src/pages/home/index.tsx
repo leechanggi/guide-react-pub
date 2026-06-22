@@ -1,4 +1,4 @@
-const PagesHome = () => {
+const HomePage = () => {
   
   return (
     <main className="flex h-full">
@@ -7,4 +7,4 @@ const PagesHome = () => {
   );
 };
 
-export default PagesHome;
+export default HomePage;

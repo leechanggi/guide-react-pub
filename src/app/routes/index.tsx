@@ -1,5 +1,5 @@
 import { Routes, Route } from 'react-router';
-import PagesHome from '@/pages/home';
+import HomePage from '@/pages/home';
 import PagesCategoryEngineering from '@/pages/category/engineering';
 import PagesCategoryDesign from '@/pages/category/design';
 import PagesArticle from '@pages/article';
@@ -12,7 +12,7 @@ const RouteComponent = ({ menuItems }) => {
 
   return (
     <Routes>
-      <Route path='/' element={<PagesHome />} />
+      <Route path='/' element={<HomePage />} />
 
       <Route path='category'>
         <Route path='engineering' element={<PagesCategoryEngineering />} />

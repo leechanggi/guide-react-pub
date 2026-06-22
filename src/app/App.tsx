@@ -2,8 +2,9 @@ import { BrowserRouter, Routes, Route } from 'react-router';
 import Header from '@/app/ui/header';
 import Footer from '@/app/ui/footer';
 import Navi from './ui/navi';
-import menuItems from './menuItems';
+import { PageHeader } from '@/shared/ui/organisms/pageheader';
 import { AuthProvider } from './context/AuthContext';
+import menuItems from './menuItems';
 
 import './styles/global.css';
 
@@ -12,9 +13,10 @@ const App = () => {
     <AuthProvider>
     <BrowserRouter>
       <Header />
-      <div>
+      <div className="wrap">
+        <Navi menuItems={menuItems} />
         <div className="container">
-          <Navi menuItems={menuItems} />
+          <PageHeader menuItems={menuItems} />
           <Routes>
             {menuItems.flatMap(item =>
               item.children
@@ -24,7 +26,6 @@ const App = () => {
                 : [<Route key={item.id} path={item.path} element={item.element} />]
             )}
           </Routes>
-          
         </div>
       </div>
       <Footer />

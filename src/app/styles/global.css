@@ -19,4 +19,24 @@
   button {
     @apply cursor-pointer;
   }
+  
+  .wrap {width: 100%; display: flex;}
+  .container {padding-top: 70px;}
+
+  /* s : gnb */
+  .gnb {
+    margin: 0 48px;
+    padding: 40px 0 20px;
+    border-bottom: 1px solid #989db9;
+  }
+  .gnb .title {font-size: 32px; line-height: 38px; font-weight: 700;}
+  /* e : gnb */
+
+  /* s: breadcrumb */
+  .breadcrumb {margin-bottom: 12px;}
+  .breadcrumb_list {display: flex; align-items: center;}
+  .breadcrumb_item:not(:first-child)::before {content: '/'; display: inline-block; width: 24px; text-align: center;}
+  .breadcrumb_item:first-child a { display: flex; align-items: center; justify-content: center;}
+  /* e: breadcrumb */
+
 }

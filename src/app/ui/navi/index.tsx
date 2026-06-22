@@ -22,7 +22,7 @@ const Navi = ({ menuItems }) => {
   return (
     <aside 
       className={cn(
-      "absolute top-0 flex flex-col h-screen pt-21.5 px-3.5 bg-[#f1f4f9] shrink-0",
+      "relative flex flex-col h-screen pt-21.5 px-3.5 bg-[#f1f4f9] shrink-0",
       // "transition-[width] duration-300 ease-in-out",
       isExpanded ? "w-60" : "w-20"
     )}
