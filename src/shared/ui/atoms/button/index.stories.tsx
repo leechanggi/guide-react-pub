@@ -3,8 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react-vite';
 import { Button } from '.';
 
 // SVG를 인라인 TSX 컴포넌트로 import → currentColor 상속, 플러그인 불필요
-import PlusIcon from '../../../assets/images/icon/IconPlus';
-import IconArrowDown from '../../../assets/images/icon/IconArrowDown';
+import { IconPlus, IconArrowDown } from '@shared/assets/images/icon';
 
 // ─── meta 설정 ───────────────────────────────────────────────────────────────
 
@@ -31,7 +30,7 @@ const meta = {
   argTypes: {
     variant: {
       control: 'inline-radio',
-      options: ['primary', 'secondary', 'colorLine', 'grayLine'],
+      options: ['primary', 'secondary', 'colorLine', 'grayLine', 'icon'],
     },
     size: {
       control: 'inline-radio',
@@ -133,7 +132,7 @@ export const Small: Story = {
 
 /** WithLeftIcon — 텍스트 왼쪽에 아이콘 배치 */
 export const WithLeftIcon: Story = {
-  render: () => <Button><PlusIcon /> Button</Button>,
+  render: () => <Button><IconPlus /> Button</Button>,
 };
 
 /** WithRightIcon — 텍스트 오른쪽에 아이콘 배치 */
@@ -143,7 +142,7 @@ export const WithRightIcon: Story = {
 
 /** WithBothIcons — 텍스트 양쪽에 아이콘 배치 */
 export const WithBothIcons: Story = {
-  render: () => <Button><PlusIcon /> Button <IconArrowDown /></Button>,
+  render: () => <Button><IconPlus /> Button <IconArrowDown /></Button>,
 };
 
 // ─── 전체 조합 쇼케이스 ──────────────────────────────────────────────────────
@@ -183,9 +182,9 @@ export const AllSizes: Story = {
 export const AllVariantsWithIcons: Story = {
   render: () => (
     <div className="flex flex-wrap items-center gap-3">
-      <Button variant="primary"><PlusIcon /> Primary</Button>
+      <Button variant="primary"><IconPlus /> Primary</Button>
       <Button variant="secondary">Secondary <IconArrowDown /></Button>
-      <Button variant="colorLine"><PlusIcon /> ColorLine</Button>
+      <Button variant="colorLine"><IconPlus /> ColorLine</Button>
       <Button variant="grayLine">GrayLine <IconArrowDown /></Button>
     </div>
   ),
@@ -198,10 +197,10 @@ export const AllVariantsWithIcons: Story = {
 export const Disabled: Story = {
   render: () => (
     <div className="flex flex-wrap items-center gap-3">
-      <Button variant="primary" disabled><PlusIcon /> Primary <IconArrowDown /></Button>
-      <Button variant="secondary" disabled><PlusIcon /> Secondary <IconArrowDown /></Button>
-      <Button variant="colorLine" disabled><PlusIcon /> ColorLine <IconArrowDown /></Button>
-      <Button variant="grayLine" disabled><PlusIcon /> GrayLine <IconArrowDown /></Button>
+      <Button variant="primary" disabled><IconPlus /> Primary <IconArrowDown /></Button>
+      <Button variant="secondary" disabled><IconPlus /> Secondary <IconArrowDown /></Button>
+      <Button variant="colorLine" disabled><IconPlus /> ColorLine <IconArrowDown /></Button>
+      <Button variant="grayLine" disabled><IconPlus /> GrayLine <IconArrowDown /></Button>
     </div>
   ),
 };
@@ -209,7 +208,7 @@ export const Disabled: Story = {
 export const Square: Story = {
   // args: {
   //   children: 'Button',
-  //   leftIcon: <PlusIcon />,
+  //   leftIcon: <IconPlus />,
   //   round: 'rounded'
   // }
   render: () => (
@@ -218,4 +217,8 @@ export const Square: Story = {
       <Button variant="colorLine" size="md" round="rounded">Button</Button>
     </div>
   )
+}
+
+export const Icon: Story = {
+  render: () => <Button variant="transparent"><IconPlus /></Button>,
 }
