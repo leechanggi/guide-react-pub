@@ -220,5 +220,5 @@ export const Square: Story = {
 }
 
 export const Icon: Story = {
-  render: () => <Button variant="transparent"><IconPlus /></Button>,
+  render: () => <Button variant="transparent" size="icon"><IconPlus /></Button>,
 }
